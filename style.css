@@ -1,0 +1,510 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd; 
+    font-family: Arial, sans-serif;
+}
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/************** Cover **************/
+
+.cover-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.h1-title {
+    font-size: 37px;
+    color: #005fb3;
+    display: contents;
+}
+
+.Cover-Book {
+    width: 65%;
+    height: 568px;
+    position: relative;
+}
+
+.Cover-Decoration {
+    height: 158px;
+    width: 156px;
+    position: absolute;
+    right: 38%;
+    top: 60%;
+    z-index: 1;
+    animation: slideFade 5s ease-in-out infinite;
+}
+
+@keyframes slideFade {
+    0% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(-3px) rotate(-2deg);
+    }
+
+    35% {
+        transform: translateY(2px) rotate(2deg);
+    }
+
+    40% {
+        transform: translateY(-2px) rotate(-1.5deg);
+    }
+
+    45% {
+        transform: translateY(1px) rotate(1.5deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0);
+    }
+    80% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+}
+
+.cover-box {
+    margin: -8px auto 0px 200px;
+    background-color: #4a78bd;
+    width: 49%;
+    height: 238px;
+    border-radius: 40px 138px 0px 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cover-box p {
+    margin: auto auto auto 23px;
+    font-size: 128px;
+    font-weight: bold;
+    color: #ffeb00;
+    line-height: 0.9;
+    font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+}
+
+.circle {
+    width: 87px;
+    height: 87px;
+    background-color: #3061ab;
+    border: 8px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    font-size: 72px;
+    font-weight: bold;
+    position: absolute;
+    right: 24%;
+    top: 55%;
+    transform: skew(-22deg);
+}
+
+/*************** Lesson ***************/
+
+.lesson-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.h1-title-Lesson {
+    font-size: 38px;
+    font-weight: bold;
+    color: #3061ab;
+    line-height: 0.9;
+    font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+}
+
+embed {
+    width: 100%;
+    height: 800px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.pdf-wrapper {
+    position: relative;
+    width: 100%;
+    height: 790px;
+}
+
+.pdf-wrapper embed {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-btn {
+    position: absolute;
+    top: 12px;
+    right: 8%;
+    background: #3c3c3c;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    color: #f1f1f1;
+}
+
+
+/*************** Quiz ***************/
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.image-container img {
+    width: 60%; 
+    height: 1290px;
+}
+
+.quiz-container {
+    max-width: 600px;
+    padding: 20px;
+    color: #1a237e;
+    text-align: left;
+    z-index: 2;
+    left: 30%;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    width:600px;
+}
+
+.question {
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.question h3 {
+    color: #0d47a1;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.feedback-msg {
+    margin-top: 10px;
+    font-weight: bold;
+    display: none; 
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.feedback-msg.correct {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.feedback-msg.wrong {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    padding-left: 35px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d48c2c;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.3s;
+}
+
+input[type="radio"]:checked + label::before {
+    background: #f7c65c;
+    box-shadow: 0 0 0 3px rgba(212, 140, 44, 0.3);
+}
+
+.Cover-Decoration-quiz {
+    height: 158px;
+    width: 156px;
+    position: absolute;
+    right: 24%;
+    top: 24%;
+    z-index: 1;
+    animation: slideFade 5s ease-in-out infinite;
+}
+
+
+
+/***************  But Next ***************/
+
+.buttom-start {
+    width: 86px;
+    height: 42px;
+    background-color: #3061ab;
+    color: #ffffff;
+}
+
+@keyframes float-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.next-btn {
+    position: absolute;
+    top: 90%;
+    right: 300px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #3061ab;
+    color: white;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: float-horizontal 2s ease-in-out infinite;
+}
+
+.next-btn:hover {
+    background-color: #4a78bd;
+    color: #ffeb00;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+.next-btn:active {
+    background-color: #3061ab;
+    color: white;
+}
+
+.walking {
+    display: inline-block;
+    animation: walk 1s infinite alternate;
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/***************  But Back ***************/
+
+.back-btn {
+    position: absolute;
+    top: 90%;
+    left: 300px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #3061ab;
+    color: white;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: float-horizontal 2s ease-in-out infinite; 
+}
+
+
+.back-btn .fa-walking {
+    margin-right: 8px;
+    transform: scaleX(-1);
+    animation: walk 0.6s infinite alternate;
+}
+
+
+
+@keyframes walk {
+    0% {
+        transform: translateY(0) scaleX(1);
+    }
+
+    50% {
+        transform: translateY(-2px) scaleX(1);
+    }
+
+    100% {
+        transform: translateY(0) scaleX(1);
+    }
+}
+
+.back-btn .fa-walking {
+    transform: scaleX(-1);
+}
+
+.back-btn .fa-walking {
+    animation: walk-back 0.6s infinite alternate;
+}
+
+@keyframes walk-back {
+    0% {
+        transform: translateY(0) scaleX(-1);
+    }
+
+    50% {
+        transform: translateY(-2px) scaleX(-1);
+    }
+
+    100% {
+        transform: translateY(0) scaleX(-1);
+    }
+}
+
+
+
+
+.back-btn:hover {
+    background-color: #4a78bd;
+    color: #ffeb00;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+.back-btn:active {
+    background-color: #3061ab;
+    color: white;
+}
+
+
+@media (max-width: 888px) {
+    .cover-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .Cover-Book {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .Cover-Decoration {
+        left: 5%;
+        top: 15%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .cover-box {
+        margin: -4px 0px 0px 161px;
+        width: 55%;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .cover-box p {
+        font-size: 60px;
+        line-height: 1;
+        margin-left: 10px;
+    }
+
+    .circle {
+        width: 43px;
+        height: 45px;
+        font-size: 40px;
+        right: 17%;
+        top: 50%;
+    }
+
+    .quiz-container {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height:50px;
+        top: 60%;
+    }
+    .question h3 {
+        font-size: 20px;
+    }
+    .image-container img {
+        width: 100%;
+        height: 1250px;
+    }
+    
+    .next-btn, .back-btn {
+        position: static;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+        text-align: center;
+        margin: 10px auto;
+        display: block;
+        z-index: 9999; 
+    }
+    a#backTolesson {
+        position: fixed;
+    }
+    
+    .question {
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+}

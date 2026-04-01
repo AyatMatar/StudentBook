@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive E-Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cover -->
+
+    <section id="cover" class="page active">
+        <div class="cover-container">
+            <h1 class="h1-title">Student Book</h1>
+
+            <div>
+                <img src="img/picture1.png" alt="Book Cover" class="Cover-Book">
+                <img src="img/Cover_Decoration.png" alt="Cover Decoration" class="Cover-Decoration">
+
+                <div class="cover-box">
+                    <p>Mindful <br> kids</p>
+                    <div class="circle">1</div>
+                </div>
+
+                <!-- Go Lesson -->
+                <a href="#" id="startBtn" class="next-btn">
+                    Let's Go Lesson <i class="fas fa-walking walking"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lesson -->
+
+    <section id="lesson" class="page">
+        <div class="lesson-container">
+            <h1 class="h1-title-Lesson">Lesson 2: Nessie Doesn’t Like Tag</h1>
+
+            <!-- PDF -->
+            <div class="pdf-wrapper">
+                <embed src="PDF/Task Book-2-3.pdf" type="application/pdf">
+
+                <button id="audioIcon" class="icon-btn">
+                    <i id="audioIconInner" class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+
+            <audio id="lessonAudio" src="audio/Task Audio.mp3"></audio>
+
+            <a href="#" id="nextToQuiz" class="next-btn">
+                Let's Go Quiz <i class="fas fa-walking walking"></i>
+            </a>
+            <a href="#" id="backToCover" class="back-btn">
+                <i class="fas fa-walking walking"></i>Back To Cover
+            </a>
+        </div>
+    </section>
+
+    <!-- Quiz -->
+
+    <section id="quiz" class="page">
+        <div>
+            <!-- background  img -->
+            <div class="image-container">
+                <img src="img/imgquze.jpg" alt="Quiz Background">
+            </div>
+
+            <img src="img/Cover_Decoration.png" alt="Cover Decoration" class="Cover-Decoration-quiz">
+            <div class="quiz-container">
+                <!-- Question 1 -->
+                <div class="question">
+                    <h3>1. Why was Nessie upset?</h3>
+                    <input type="radio" id="q1a" name="q1" value="wrong">
+                    <label for="q1a">She was hungry</label>
+
+                    <input type="radio" id="q1b" name="q1" value="correct">
+                    <label for="q1b">People said she was scary</label>
+
+                    <input type="radio" id="q1c" name="q1" value="wrong">
+                    <label for="q1c">She lost her toys</label>
+
+                    <div class="feedback-msg"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question">
+                    <h3>2. What did Nessie do to keep calm?</h3>
+                    <input type="radio" id="q2a" name="q2" value="wrong">
+                    <label for="q2a">She shouted loudly</label>
+
+                    <input type="radio" id="q2b" name="q2" value="wrong">
+                    <label for="q2b">She swam away</label>
+
+                    <input type="radio" id="q2c" name="q2" value="correct">
+                    <label for="q2c">She took deep breaths</label>
+
+                    <div class="feedback-msg"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question">
+                    <h3>3. What did her friends do?</h3>
+                    <input type="radio" id="q3a" name="q3" value="correct">
+                    <label for="q3a">They cheered her up</label>
+
+                    <input type="radio" id="q3b" name="q3" value="wrong">
+                    <label for="q3b">They ignored her</label>
+
+                    <input type="radio" id="q3c" name="q3" value="wrong">
+                    <label for="q3c">They ran away</label>
+
+                    <div class="feedback-msg"></div>
+                </div>
+
+            </div>
+
+            <a href="#" id="backTolesson" class="back-btn">
+                Back To Lesson <i class="fas fa-walking walking"></i>
+            </a>
+        </div>
+        
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
